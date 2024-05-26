@@ -1,24 +1,21 @@
-import random
-import re
-def ex54():
-    myStudents = ["Воронков", "Петров", "Ключников", "Керган", "Молькова", "Михалев", "Торхов", "Тянутова", "Уланова", "Хачатрян"]
-    '''otherStudents = ["Петров", "Иванов", "Добриков", "Процай", "Силантьева", "Лазарев", "Соменков", "Теплых", "Сорокина", "Макарин"]'''
-    otherStudents = ["Петров", "Иванов", "Добриков", "Иванов", "Силантьева", "Иванов", "Соменков", "Иванов", "Сорокина", "Иванов"]
+group1 = ['Иванов', 'Петров', 'Сидоров', 'Козлов', 'Смирнов', 'Алексеев', 'Николаев', 'Кузнецов', 'Морозов', 'Васильев']
+group2 = ['Федоров', 'Григорьев', 'Дмитриев', 'Калинин', 'Павлов', 'Лебедев', 'Захаров', 'Белов', 'Гаврилов', 'Титов']
 
-    team = []
-    while len(team) != 10:
-        i = random.randint(0, 9)
-        indexI = []
-        if (myStudents[i] not in team) or (myStudents[i] in team and i not in indexI):
-            indexI.append(i)
-            team.append(myStudents[i])
-        j = random.randint(0, 9)
-        indexJ = []
-        if (otherStudents[j] not in team) or (otherStudents[j] in team and i not in indexJ):
-            team.append(otherStudents[j])
-    team = tuple(sorted(team))
-    print(myStudents, "\n", otherStudents)
-    print(team, "\n", len(team))
-    if "Иванов" in team:
-        print(len(re.findall("Иванов", str(team))))
-ex54()
+sports_team = tuple(group1[:5] + group2[:5])
+
+print("Список студентов группы 1:", group1)
+print("Список студентов группы 2:", group2)
+print("Спортивная команда:", sports_team)
+
+print("Длина спортивной команды:", len(sports_team))
+
+sorted_team = sorted(sports_team)
+print("Отсортированная спортивная команда:", sorted_team)
+
+surname_to_check = "Иванов"
+count_ivanov = sports_team.count(surname_to_check)
+if count_ivanov > 0:
+    print("Студент с фамилией", {surname_to_check}," находится в спортивной команде.")
+    print("Количество вхождений фамилии", {surname_to_check}, " в команду: {count_ivanov}")
+else:
+    print("Студент с фамилией" ,{surname_to_check}, "не находится в спортивной команде.")
