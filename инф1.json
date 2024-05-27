@@ -1,0 +1,22 @@
+{
+    "products": [
+        {
+            "name": "chocolate",
+            "price": 50,
+			"available": true,
+            "weight": "100"
+        },
+        {
+            "name": "coffee",
+            "price": 100,
+			"available":false,
+            "weight": "250"
+        },
+        {
+            "name": "tea",
+            "price":70,
+			"available":true,
+            "weight": "50"
+        }
+    ]
+}
